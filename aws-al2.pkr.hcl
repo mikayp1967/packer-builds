@@ -28,11 +28,21 @@ build {
   sources = [
     "source.amazon-ebs.al2"
   ]
+
+  provisioner "shell" {
+      inline = ["mkdir scripts files"]
+  }
+
   provisioner "file" {
-    source = "/scripts/*"
+    source = "./scripts"
     destination = "scripts"
   }
-  
+
+  provisioner "file" {
+    source = "./files"
+    destination = "files"
+  }
+
   provisioner "shell" {
     environment_vars = [
       "AWS_DEFAULT_REGION=eu-west-2",
