@@ -29,10 +29,6 @@ build {
     "source.amazon-ebs.al2"
   ]
 
-  #provisioner "shell" {
-  #    inline = ["mkdir scripts files"]
-  #}
-
   provisioner "file" {
     source = "./scripts"
     destination = "scripts"
