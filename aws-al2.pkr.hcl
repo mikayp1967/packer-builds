@@ -30,6 +30,11 @@ build {
   ]
 
   provisioner "file" {
+    source = "package-list"
+    destination = "./"
+  }
+
+  provisioner "file" {
     source = "./scripts"
     destination = "scripts"
   }

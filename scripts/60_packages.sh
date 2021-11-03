@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 #
-# Simple script to do nothing useful, but could easily be replaced with something useful
+# Install packages according to package-list
+# I run this after other scripts to avoid yum lock
 #
 
 if [[ ! -d random_script_output ]]
@@ -10,7 +11,7 @@ fi
 
 printf "Installing packages...\n"
 
-PACKAGES=`cat package-list`
+PACKAGES=`cat ~/package-list`
 for PACK in ${PACKAGES}
     do sudo yum install -y ${PACK}
 done
