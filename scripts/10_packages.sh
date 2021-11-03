@@ -8,6 +8,9 @@ then
     mkdir random_script_output
 fi
 
-DATE_STR=`date '+%d-%m-%y %T'`
-printf "%s     %s \n" ${BASH_SOURCE} ${DATE_STR} >> random_script_output/scripts.log
-sleep 15
+printf "Installing packages...\n"
+
+PACKAGES=`cat package-list`
+for PACK in ${PACKAGES}
+    do sudo yum install -y ${PACK}
+done
