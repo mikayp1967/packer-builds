@@ -28,15 +28,15 @@ build {
   sources = [
     "source.amazon-ebs.al2"
   ]
+  provisioner "file" {
+    source = "/scripts/*"
+    destination = "scripts"
+  }
+  
   provisioner "shell" {
     environment_vars = [
       "AWS_DEFAULT_REGION=eu-west-2",
     ]
-    inline = [
-      "echo Updating packages",
-      "sleep 10",
-      "sudo yum update -y",
-      "echo \"test file\" > /tmp/test-file",
-    ]
+    script = "run_scripts.sh"
   }
 }
