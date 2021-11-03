@@ -9,5 +9,5 @@ then
 fi
 
 DATE_STR=`date '+%d-%m-%y %T'`
-printf "%s     %s \b" ${BASH_SOURCE} ${DATE_STR} >> random_script_output/scripts.log
+printf "%s     %s \n" ${BASH_SOURCE} ${DATE_STR} >> random_script_output/scripts.log
 sleep 15
