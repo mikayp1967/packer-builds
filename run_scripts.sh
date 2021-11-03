@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+ls -l
 SCRIPT_LIST=`ls scripts/*sh`
 chmod 755 scripts/*sh
 
