@@ -16,11 +16,11 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 # CE-VERS=$(apt-cache madison docker-ce|head -1|awk '{print $3}')
 sudo usermod -a -G docker ubuntu
 # Change cgroups config        https://stackoverflow.com/questions/52119985/kubeadm-init-shows-kubelet-isnt-running-or-healthy
-sudo cat > /etc/docker/daemon.json << EOF
+sudo bash -c 'cat > /etc/docker/daemon.json << EOF
 {
     "exec-opts": ["native.cgroupdriver=systemd"]
 }
-EOF
+EOF'
 sudo systemctl restart docker
 sudo systemctl enable docker
 sudo swapoff -a
