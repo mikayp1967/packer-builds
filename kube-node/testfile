@@ -10,7 +10,7 @@ packer {
 }
 
 source "amazon-ebs" "ubuntu-kube" {
-  ami_name      = "packer-ubuntu-kube-211125-2016"
+  ami_name      = "packer-ubuntu-kube-211125-2001"
   instance_type = "t2.micro"
   region        = "eu-west-2"
   source_ami_filter {
