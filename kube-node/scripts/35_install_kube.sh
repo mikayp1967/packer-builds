@@ -7,9 +7,9 @@
 sudo groupadd -g 1200 kubegroup
 sudo useradd -g 1200 -u 1200 -d /home/kubeuser -m -s /bin/bash kubeuser
 sudo usermod -a -G docker kubeuser
+mkdir ~kubeuser/.ssh ~kubeuser/.aws ~kubeuser/.kube
 
 # Install/config AWS
-sudo apt install -y awscli
 cat  >  ~/.aws/config <<EOF
 [default]
 region = eu-west-2
